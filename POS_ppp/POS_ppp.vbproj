@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50796F1B-CC90-429E-88CF-BDD420C2A110}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>POS_ppp.My.MyApplication</StartupObject>
+    <RootNamespace>POS_ppp</RootNamespace>
+    <AssemblyName>POS_ppp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>POS_ppp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>POS_ppp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MadMilkman.Ini">
+      <HintPath>..\lib\MadMilkman\MadMilkman.Ini.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\lib\sql connector net\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Reflection" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="module_class_other\class\MySqlThing.vb" />
+    <Compile Include="module_class_other\class\TouchScroll.vb" />
+    <Compile Include="module_class_other\module\mdl_function.vb" />
+    <Compile Include="module_class_other\module\mdl_sysVar.vb" />
+    <Compile Include="transaction\usercontrol\component\uc_test_customctr.Designer.vb">
+      <DependentUpon>uc_test_customctr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\component\uc_test_customctr.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_pay.Designer.vb">
+      <DependentUpon>fr_order_pay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_pay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_list.Designer.vb">
+      <DependentUpon>fr_order_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_list.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_menu.Designer.vb">
+      <DependentUpon>fr_order_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_order_menu.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_transaction.Designer.vb">
+      <DependentUpon>fr_transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\fr_transaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="transaction\winform\fr_order_detail.Designer.vb">
+      <DependentUpon>fr_order_detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\winform\fr_order_detail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_app\fr_login.Designer.vb">
+      <DependentUpon>fr_login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_app\fr_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_app\fr_main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_app\fr_main.Designer.vb">
+      <DependentUpon>fr_main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="transaction\usercontrol\component\uc_test_customctr.resx">
+      <DependentUpon>uc_test_customctr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaction\usercontrol\fr_order_pay.resx">
+      <DependentUpon>fr_order_pay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaction\usercontrol\fr_order_list.resx">
+      <DependentUpon>fr_order_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaction\usercontrol\fr_order_menu.resx">
+      <DependentUpon>fr_order_menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaction\usercontrol\fr_transaction.resx">
+      <DependentUpon>fr_transaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaction\winform\fr_order_detail.resx">
+      <DependentUpon>fr_order_detail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_app\fr_login.resx">
+      <DependentUpon>fr_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_app\fr_main.resx">
+      <DependentUpon>fr_main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dat\font\1\OpenSans-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-BoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-ExtraBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-ExtraBoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-LightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-SemiBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\1\OpenSans-SemiBoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-BlackItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-BoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-ExtraLight.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-ExtraLightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-LightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-SemiBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="dat\font\2\SourceSansPro-SemiBoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="Resources\config.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dat\font\1\LICENSE.txt" />
+    <Content Include="dat\font\2\OFL.txt" />
+    <None Include="Resources\search_wh_thin_16x16.png" />
+    <None Include="Resources\close_wh_thin_16x16.png" />
+    <None Include="Resources\menu_wh_thin_16x16.png" />
+    <None Include="Resources\minimize_wh_thin_16x16.png" />
+    <None Include="Resources\arrowleft_wh_thin_16x16.png" />
+    <None Include="Resources\add_wh_thin_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mng_item\usercontrol\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

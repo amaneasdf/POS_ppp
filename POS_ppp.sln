@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "POS_ppp", "POS_ppp\POS_ppp.vbproj", "{50796F1B-CC90-429E-88CF-BDD420C2A110}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "POS_setup", "POS_setup\POS_setup.vdproj", "{1648344D-BF24-4238-B4A2-2BEF8AE20EEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50796F1B-CC90-429E-88CF-BDD420C2A110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50796F1B-CC90-429E-88CF-BDD420C2A110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50796F1B-CC90-429E-88CF-BDD420C2A110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50796F1B-CC90-429E-88CF-BDD420C2A110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1648344D-BF24-4238-B4A2-2BEF8AE20EEB}.Debug|Any CPU.ActiveCfg = Release
+		{1648344D-BF24-4238-B4A2-2BEF8AE20EEB}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
