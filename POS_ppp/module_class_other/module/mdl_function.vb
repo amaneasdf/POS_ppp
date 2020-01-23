@@ -392,6 +392,25 @@ Module mdl_function
         End If
     End Sub
 
+    'DROP SHADOW FOR EVERY CONTROL IN A PANEL
+    Public Sub DropShadow(sender As Object, e As PaintEventArgs)
+        Dim panel = DirectCast(sender, Panel)
+        Dim shadow = New List(Of Color)
+        shadow.AddRange({Color.FromArgb(181, 181, 181), Color.FromArgb(195, 195, 195), Color.FromArgb(211, 211, 211)})
+        Using pen = New Pen(shadow(0), 3)
+            For Each _ctr As Control In panel.Controls()
+                Dim pt = _ctr.Location
+                pt.Y += _ctr.Height
+                For i = 0 To 2
+                    pen.Color = shadow(i)
+                    e.Graphics.DrawLine(pen, pt.X, pt.Y, pt.X + _ctr.Width - 1, pt.Y)
+                    pt.Y += 1
+                Next
+            Next
+
+        End Using
+    End Sub
+
     'NUMERIC INPUT
     Public Sub numericGotFocus(sender As NumericUpDown)
         If sender.Value = 0 Then

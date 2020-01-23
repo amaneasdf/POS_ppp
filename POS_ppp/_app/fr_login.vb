@@ -34,7 +34,7 @@
             Dim _ConnCfgName As String = ""
             Dim _RespMsg As String = ""
 
-            _ConnCfgName = NetworkSettingName
+            MainConnData = LoadDataConnection(NetworkSettingName)
 
             Return True
         Catch ex As Exception

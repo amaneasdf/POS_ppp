@@ -32,19 +32,18 @@ Partial Class fr_order_list
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.fpnl_main = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.pnl_top.SuspendLayout()
         Me.fpnl_onprog.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.fpnl_main.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_top
         '
-        Me.pnl_top.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnl_top.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.pnl_top.Controls.Add(Me.lbl_progress)
         Me.pnl_top.Controls.Add(Me.fpnl_onprog)
         Me.pnl_top.Dock = System.Windows.Forms.DockStyle.Top
@@ -69,7 +68,7 @@ Partial Class fr_order_list
         Me.fpnl_onprog.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fpnl_onprog.AutoScroll = True
-        Me.fpnl_onprog.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.fpnl_onprog.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.fpnl_onprog.Controls.Add(Me.Panel2)
         Me.fpnl_onprog.Controls.Add(Me.Panel3)
         Me.fpnl_onprog.Controls.Add(Me.Panel4)
@@ -114,7 +113,10 @@ Partial Class fr_order_list
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.LinkLabel2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.fpnl_main)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -128,7 +130,7 @@ Partial Class fr_order_list
         '
         Me.LinkLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(897, 14)
+        Me.LinkLabel1.Location = New System.Drawing.Point(759, 38)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(81, 15)
         Me.LinkLabel1.TabIndex = 4
@@ -141,38 +143,11 @@ Partial Class fr_order_list
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fpnl_main.AutoScroll = True
-        Me.fpnl_main.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.fpnl_main.Controls.Add(Me.Panel9)
-        Me.fpnl_main.Controls.Add(Me.Panel6)
-        Me.fpnl_main.Controls.Add(Me.Panel7)
-        Me.fpnl_main.Location = New System.Drawing.Point(10, 32)
+        Me.fpnl_main.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.fpnl_main.Location = New System.Drawing.Point(10, 64)
         Me.fpnl_main.Name = "fpnl_main"
-        Me.fpnl_main.Size = New System.Drawing.Size(968, 257)
+        Me.fpnl_main.Size = New System.Drawing.Size(968, 225)
         Me.fpnl_main.TabIndex = 3
-        '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.White
-        Me.Panel9.Location = New System.Drawing.Point(3, 3)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(175, 160)
-        Me.Panel9.TabIndex = 0
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.Location = New System.Drawing.Point(184, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(175, 160)
-        Me.Panel6.TabIndex = 0
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Location = New System.Drawing.Point(365, 3)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(175, 160)
-        Me.Panel7.TabIndex = 0
         '
         'Label1
         '
@@ -184,6 +159,39 @@ Partial Class fr_order_list
         Me.Label1.Size = New System.Drawing.Size(74, 18)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Completed"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Blue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.POS_ppp.My.Resources.Resources.search_wh_thin_16x16
+        Me.Button1.Location = New System.Drawing.Point(305, 32)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 26)
+        Me.Button1.TabIndex = 8
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Open Sans", 10.0!)
+        Me.TextBox1.Location = New System.Drawing.Point(13, 32)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(292, 26)
+        Me.TextBox1.TabIndex = 7
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Location = New System.Drawing.Point(862, 38)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(116, 15)
+        Me.LinkLabel2.TabIndex = 9
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Riwayat Pembayaran"
         '
         'fr_order_list
         '
@@ -201,7 +209,6 @@ Partial Class fr_order_list
         Me.fpnl_onprog.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.fpnl_main.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -215,9 +222,9 @@ Partial Class fr_order_list
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents Panel9 As System.Windows.Forms.Panel
-    Friend WithEvents Panel6 As System.Windows.Forms.Panel
-    Friend WithEvents Panel7 As System.Windows.Forms.Panel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
 
 End Class

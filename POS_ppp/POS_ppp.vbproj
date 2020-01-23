@@ -83,6 +83,12 @@
     <Compile Include="module_class_other\class\TouchScroll.vb" />
     <Compile Include="module_class_other\module\mdl_function.vb" />
     <Compile Include="module_class_other\module\mdl_sysVar.vb" />
+    <Compile Include="transaction\usercontrol\component\uc_order_simple.Designer.vb">
+      <DependentUpon>uc_order_simple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaction\usercontrol\component\uc_order_simple.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="transaction\usercontrol\component\uc_test_customctr.Designer.vb">
       <DependentUpon>uc_test_customctr.vb</DependentUpon>
     </Compile>
@@ -149,6 +155,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="transaction\usercontrol\component\uc_order_simple.resx">
+      <DependentUpon>uc_order_simple.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="transaction\usercontrol\component\uc_test_customctr.resx">
       <DependentUpon>uc_test_customctr.vb</DependentUpon>
     </EmbeddedResource>
