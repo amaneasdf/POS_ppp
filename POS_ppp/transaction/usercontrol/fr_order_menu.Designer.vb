@@ -22,15 +22,17 @@ Partial Class fr_order_menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_detail = New System.Windows.Forms.Panel()
         Me.pnl_order_content = New System.Windows.Forms.Panel()
         Me.bt_item_del = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.bt_item_rem = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.bt_item_add = New System.Windows.Forms.Button()
@@ -39,6 +41,7 @@ Partial Class fr_order_menu
         Me.in_total = New System.Windows.Forms.TextBox()
         Me.in_disk = New System.Windows.Forms.TextBox()
         Me.in_tax = New System.Windows.Forms.TextBox()
+        Me.in_table = New System.Windows.Forms.TextBox()
         Me.in_subtot = New System.Windows.Forms.TextBox()
         Me.ck_takeaway = New System.Windows.Forms.CheckBox()
         Me.ck_eatin = New System.Windows.Forms.CheckBox()
@@ -46,6 +49,7 @@ Partial Class fr_order_menu
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_test = New System.Windows.Forms.DataGridView()
         Me.item_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,10 +64,7 @@ Partial Class fr_order_menu
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.fpnl_main = New System.Windows.Forms.FlowLayoutPanel()
         Me.fpnl_kateg = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.in_table = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.lbl_tot_item = New System.Windows.Forms.Label()
         Me.pnl_detail.SuspendLayout()
         Me.pnl_order_content.SuspendLayout()
         CType(Me.dgv_test, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +100,7 @@ Partial Class fr_order_menu
         Me.pnl_order_content.Controls.Add(Me.in_subtot)
         Me.pnl_order_content.Controls.Add(Me.ck_takeaway)
         Me.pnl_order_content.Controls.Add(Me.ck_eatin)
+        Me.pnl_order_content.Controls.Add(Me.lbl_tot_item)
         Me.pnl_order_content.Controls.Add(Me.Label3)
         Me.pnl_order_content.Controls.Add(Me.Label5)
         Me.pnl_order_content.Controls.Add(Me.Label2)
@@ -127,6 +129,21 @@ Partial Class fr_order_menu
         Me.bt_item_del.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.bt_item_del.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Open Sans", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(156, 335)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(43, 37)
+        Me.Button2.TabIndex = 7
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button5
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -142,6 +159,20 @@ Partial Class fr_order_menu
         Me.Button5.Text = "free"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Open Sans", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Location = New System.Drawing.Point(110, 292)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(43, 37)
+        Me.Button1.TabIndex = 7
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'bt_item_rem
         '
@@ -265,6 +296,18 @@ Partial Class fr_order_menu
         Me.in_tax.TabIndex = 6
         Me.in_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'in_table
+        '
+        Me.in_table.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.in_table.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.in_table.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.in_table.Font = New System.Drawing.Font("Open Sans", 9.0!)
+        Me.in_table.ForeColor = System.Drawing.Color.Black
+        Me.in_table.Location = New System.Drawing.Point(338, 335)
+        Me.in_table.Name = "in_table"
+        Me.in_table.Size = New System.Drawing.Size(68, 24)
+        Me.in_table.TabIndex = 6
+        '
         'in_subtot
         '
         Me.in_subtot.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -346,6 +389,17 @@ Partial Class fr_order_menu
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Subtot."
         '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Open Sans", 9.0!)
+        Me.Label6.Location = New System.Drawing.Point(278, 337)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 17)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "Table"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -367,24 +421,24 @@ Partial Class fr_order_menu
         Me.dgv_test.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.dgv_test.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgv_test.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_test.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_test.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_test.ColumnHeadersVisible = False
         Me.dgv_test.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.item_id, Me.item_name, Me.item_notes_ck, Me.item_notes, Me.item_count, Me.item_price, Me.item_disk, Me.item_total, Me.item_filler})
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_test.DefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_test.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgv_test.GridColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.dgv_test.Location = New System.Drawing.Point(3, 36)
         Me.dgv_test.Name = "dgv_test"
@@ -403,8 +457,8 @@ Partial Class fr_order_menu
         '
         'item_name
         '
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.item_name.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.item_name.DefaultCellStyle = DataGridViewCellStyle2
         Me.item_name.HeaderText = "Item"
         Me.item_name.MinimumWidth = 190
         Me.item_name.Name = "item_name"
@@ -430,9 +484,9 @@ Partial Class fr_order_menu
         '
         'item_count
         '
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle33.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.item_count.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.item_count.DefaultCellStyle = DataGridViewCellStyle3
         Me.item_count.HeaderText = "Count"
         Me.item_count.MinimumWidth = 50
         Me.item_count.Name = "item_count"
@@ -459,9 +513,9 @@ Partial Class fr_order_menu
         '
         'item_total
         '
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle34.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.item_total.DefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Open Sans", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.item_total.DefaultCellStyle = DataGridViewCellStyle4
         Me.item_total.HeaderText = "Total"
         Me.item_total.Name = "item_total"
         Me.item_total.ReadOnly = True
@@ -504,57 +558,16 @@ Partial Class fr_order_menu
         Me.fpnl_kateg.TabIndex = 0
         Me.fpnl_kateg.WrapContents = False
         '
-        'Label6
+        'lbl_tot_item
         '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Open Sans", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(256, 294)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 17)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Table"
-        '
-        'in_table
-        '
-        Me.in_table.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.in_table.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer))
-        Me.in_table.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.in_table.Font = New System.Drawing.Font("Open Sans", 9.0!)
-        Me.in_table.ForeColor = System.Drawing.Color.Black
-        Me.in_table.Location = New System.Drawing.Point(316, 292)
-        Me.in_table.Name = "in_table"
-        Me.in_table.Size = New System.Drawing.Size(68, 24)
-        Me.in_table.TabIndex = 6
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(143, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Open Sans", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Location = New System.Drawing.Point(110, 292)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(43, 37)
-        Me.Button1.TabIndex = 7
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Open Sans", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(156, 335)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(43, 37)
-        Me.Button2.TabIndex = 7
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.lbl_tot_item.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbl_tot_item.AutoSize = True
+        Me.lbl_tot_item.Font = New System.Drawing.Font("Open Sans", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_tot_item.Location = New System.Drawing.Point(220, 292)
+        Me.lbl_tot_item.Name = "lbl_tot_item"
+        Me.lbl_tot_item.Size = New System.Drawing.Size(38, 17)
+        Me.lbl_tot_item.TabIndex = 4
+        Me.lbl_tot_item.Text = "Total"
         '
         'fr_order_menu
         '
@@ -611,5 +624,6 @@ Partial Class fr_order_menu
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents lbl_tot_item As System.Windows.Forms.Label
 
 End Class

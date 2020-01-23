@@ -126,8 +126,8 @@
     End Function
 
     'NEW ORDER
-    Private Sub SetupOrderForm()
-        If dgv_test.RowCount > 0 Then
+    Private Sub SetupOrderForm(Optional ShowDialog As Boolean = True)
+        If dgv_test.RowCount > 0 And ShowDialog Then
             Dim _resp = MessageBox.Show("Batalkan order sebelumnya dan buat order baru?", "New Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If _resp <> DialogResult.Yes Then Exit Sub
         End If
@@ -143,6 +143,7 @@
         in_table.ReadOnly = True
         ck_eatin.Checked = False
         ck_takeaway.Checked = False
+        lbl_tot_item.Text = ""
 
         InputingOrder = False
         bt_proses.Enabled = False
@@ -241,6 +242,7 @@
         in_disk.Text = commaThousand(_disk)
         in_tax.Text = commaThousand(_tax)
         in_total.Text = commaThousand(_total)
+        lbl_tot_item.Text = "Total item : " & dgv_test.RowCount
     End Sub
 
     'CREATE ORDER
@@ -250,18 +252,48 @@
                 x.Open() : If x.ConnectionState = ConnectionState.Open Then
                     Dim q As String = ""
                     Dim _type As String = If(ck_eatin.Checked, "IN", "TK")
-                    Dim _fr = {"order_type='" & 1 & "'",
+                    Dim _fr = {"order_type='" & _type & "'",
                                "order_date=CURDATE()",
-                               "order_time=NOW()",
-                               "order_status=0"
+                               "order_time=CURTIME()",
+                               "order_status=0",
+                               "order_reg_user='" & LoggedUser.User_Alias & "'"
                               }
+
+                    'INPUT ORDER HEADER
+                    q = "INSERT INTO data_order(order_no, order_type, order_table, order_status, order_reg_date, order_reg_user) " _
+                        & "SELECT @n_id := CONCAT('{0}-', DATE_FORMAT(CURDATE(),'%y%m%d'), '.', LPAD(IFNULL(MAX(SUBSTRING_INDEX(order_no,'.',-1)), 0) + 1, 5, 0)), " _
+                        & "'{0}', '{1}', 0, NOW(), '{2}' FROM data_order WHERE DATE_FORMAT(order_reg_date, '%Y-%m-%d')=CURDATE(); SELECT @n_id;"
+                    Dim _id = x.ExecScalar(String.Format(q, _type, in_table.Text, LoggedUser.User_Alias))
+                    If String.IsNullOrWhiteSpace(_id) Then
+                        Throw New Exception("Tidak dapat membuat data order baru. ID order yang dikembalikan kosong.")
+                    End If
+
+                    'INPUT ORDERED ITEM
+                    For Each _r As DataGridViewRow In dgv_test.Rows
+                        q = "INSERT INTO data_order_item SET {0}"
+                        Dim _qf = {"item_order='" & _id & "'",
+                                   "item_iditem='" & _r.Cells("item_id").Value & "'",
+                                   "item_count=" & _r.Cells("item_count").Value,
+                                   "item_discount=" & _r.Cells("item_disk").Value.ToString.Replace(",", "."),
+                                   "item_price=" & _r.Cells("item_price").Value.ToString.Replace(",", "."),
+                                   "item_status=1",
+                                   "item_reg_date=NOW()",
+                                   "item_reg_user='" & LoggedUser.User_Alias & "'"
+                                  }
+
+                        x.ExecCommand(String.Format(q, String.Join(",", _qf)))
+
+                    Next
+
+                    Dim _f = New fr_order_detail : _f.DoLoadEdit(_id)
+                    SetupOrderForm(False)
                 Else
                     MessageBox.Show("Tidak dapat terhubung ke database.", "Menu", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End Using
         Catch ex As Exception
             LogError(ex)
-
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -303,6 +335,8 @@
         If dgv_test.RowCount = 0 Then
             MessageBox.Show("Pilih menu terlebih dahulu.")
         End If
+
+        SaveOrder()
     End Sub
 
     Private Sub bt_del_Click(sender As Object, e As EventArgs) Handles bt_del.Click
