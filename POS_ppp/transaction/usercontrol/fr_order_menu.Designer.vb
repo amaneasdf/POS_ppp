@@ -64,6 +64,7 @@ Partial Class fr_order_menu
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.fpnl_main = New System.Windows.Forms.FlowLayoutPanel()
         Me.fpnl_kateg = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lbl_tot_item = New System.Windows.Forms.Label()
         Me.pnl_detail.SuspendLayout()
         Me.pnl_order_content.SuspendLayout()
         CType(Me.dgv_test, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +100,7 @@ Partial Class fr_order_menu
         Me.pnl_order_content.Controls.Add(Me.in_subtot)
         Me.pnl_order_content.Controls.Add(Me.ck_takeaway)
         Me.pnl_order_content.Controls.Add(Me.ck_eatin)
+        Me.pnl_order_content.Controls.Add(Me.lbl_tot_item)
         Me.pnl_order_content.Controls.Add(Me.Label3)
         Me.pnl_order_content.Controls.Add(Me.Label5)
         Me.pnl_order_content.Controls.Add(Me.Label2)
@@ -556,6 +558,17 @@ Partial Class fr_order_menu
         Me.fpnl_kateg.TabIndex = 0
         Me.fpnl_kateg.WrapContents = False
         '
+        'lbl_tot_item
+        '
+        Me.lbl_tot_item.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbl_tot_item.AutoSize = True
+        Me.lbl_tot_item.Font = New System.Drawing.Font("Open Sans", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_tot_item.Location = New System.Drawing.Point(220, 292)
+        Me.lbl_tot_item.Name = "lbl_tot_item"
+        Me.lbl_tot_item.Size = New System.Drawing.Size(38, 17)
+        Me.lbl_tot_item.TabIndex = 4
+        Me.lbl_tot_item.Text = "Total"
+        '
         'fr_order_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
@@ -611,5 +624,6 @@ Partial Class fr_order_menu
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents lbl_tot_item As System.Windows.Forms.Label
 
 End Class
